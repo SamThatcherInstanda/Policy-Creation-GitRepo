@@ -1,0 +1,45 @@
+meta {
+  name: Generate Dummy Data
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://instandatestautomation.azurewebsites.net/api/{{environment}}/{{stack}}/Packages/{{packageId}}/TestData/createQuoteOrPolicy?version=latest&code={{functionAppCode}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  version: latest
+  code: {{functionAppCode}}
+}
+
+headers {
+  accept: text/plain
+  Content-Type: application/json
+}
+
+body:json {
+  {}
+}
+
+tests {
+  let raw = res.getBody()
+  let body = typeof raw === "string" ? JSON.parse(raw) : raw
+  
+  //bru.setEnvVar("fullResponse", JSON.stringify(body))
+  bru.setVar("fullResponse", JSON.stringify(body))
+  
+  bru.setEnvVar("policyStartDate", body.Policy_Start_Date)
+  bru.setEnvVar("policyEndDate", body.Policy_End_Date)
+  bru.setEnvVar("stateChoice", body.State_Choice)
+  
+  
+  
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

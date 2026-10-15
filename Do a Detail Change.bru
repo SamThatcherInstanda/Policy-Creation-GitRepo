@@ -1,0 +1,38 @@
+meta {
+  name: Do a Detail Change
+  type: http
+  seq: 5
+}
+
+put {
+  url: https://api-{{environment}}.instanda-eu.com/Live/v0.1/Package{{packageId}}/DetailChange?siteDomainName={{siteDomain}}&policyNumber={{policyNumber}}&salesPersonUserName={{salesPersonUserName}}
+  body: json
+  auth: basic
+}
+
+params:query {
+  siteDomainName: {{siteDomain}}
+  policyNumber: {{policyNumber}}
+  salesPersonUserName: {{salesPersonUserName}}
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: test
+  password: test
+}
+
+body:json {
+  {
+    "QuickQuoteNum": 56
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

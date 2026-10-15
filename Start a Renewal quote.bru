@@ -1,0 +1,143 @@
+meta {
+  name: Start a Renewal quote
+  type: http
+  seq: 6
+}
+
+put {
+  url: https://api-{{environment}}.instanda-eu.com/Live/v0.1/Package{{packageId}}/StartRenewal?siteDomainName={{siteDomain}}&salesPersonUserName={{salesPersonUserName}}&policyNumber={{policyNumber}}&policyStartDate=2026-11-29
+  body: json
+  auth: basic
+}
+
+params:query {
+  siteDomainName: {{siteDomain}}
+  salesPersonUserName: {{salesPersonUserName}}
+  policyNumber: {{policyNumber}}
+  policyStartDate: 2026-11-29
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: test
+  password: test
+}
+
+body:json {
+  {
+    "AgentCommission": 0,
+    "AgentDirectToQuoteOnLogin": false,
+    "AgentGroupAddress1": "Test avenue",
+    "AgentGroupAddress2": "1 Close avenue",
+    "AgentGroupCountry": "",
+    "AgentGroupCounty": "",
+    "AgentGroupEmail": "testers@f2xgroup.co.uk",
+    "AgentGroupName": "Sam's Insurance",
+    "AgentGroupPostcode": "CB2 9NE",
+    "AgentGroupRefID": "",
+    "AgentGroupTown": "CAMBRIDGE",
+    "CancellationReason": "",
+    "Claims_Count": 0,
+    "CompanySanctionsCheckerError": 0,
+    "CompanySanctionsCheckerScore": 0,
+    "CreatedFrom": "NewBusiness",
+    "CreatedOn": "2026-04-30T12:28:26.587+00:00",
+    "CustomerRef": "9GK92Q",
+    "HasDied": false,
+    "IndividualSanctionsCheckerError": 0,
+    "IndividualSanctionsCheckerScore": 0,
+    "Insuree_Address_Line_1": "753 Stamm Hollow",
+    "Insuree_Address_Line_2": "",
+    "Insuree_City": "West Brennonmouth",
+    "Insuree_Country": "GB",
+    "Insuree_Entity_Type_Choice": "Individual",
+    "Insuree_First_Name": "Kale",
+    "Insuree_General_Liability_Deductible": "£250,000",
+    "Insuree_General_Liability_Limit": "£3,000,000",
+    "Insuree_Last_Name": "Von",
+    "Insuree_Postcode": "AB5 2WP",
+    "Insuree_Primary_Email": "kale29@instanda.com",
+    "Insuree_State": "",
+    "Insuree_Title": "Mr",
+    "INSVAR_RenewalCountExcludingCancelledRenewals": 0,
+    "INSVAR_RenewalCountIncludingCancelledRenewals": 0,
+    "INSVAR_RenewalsCancelledFromRenewalCount": 0,
+    "IsCancelled": false,
+    "IsDetailChange": false,
+    "IsMTA": false,
+    "IsReinstatement": false,
+    "IsRenewal": false,
+    "IsRenewalAllowedToLapse": false,
+    "MTA_COUNT": 0,
+    "OriginalPolicyStartDate": "2026-04-30T00:00:00+00:00",
+    "OriginalQuoteRef": "DQ7FSM",
+    "OriginalReleaseDate": "2026-04-23T12:12:54+00:00",
+    "OriginatedFrom": "API",
+    "PaymentType": "Offline",
+    "Policy_End_Date": "2026-12-12T00:00:00+00:00",
+    "Policy_Start_Date": "2026-04-30T00:00:00+00:00",
+    "PolicyNumber": "LIVE000664",
+    "PolicyNumberSuffixed": "LIVE000664",
+    "PolicyOriginalSaleDate": "2026-04-30T12:28:31.293+00:00",
+    "PremiumNet": 1036.94,
+    "QuickQuoteNum": 785007.38,
+    "QuickQuoteNumTwo": 7417.29,
+    "QuoteDate": "2026-04-30T00:00:00+00:00",
+    "QuoteRef": "DQ7FSM",
+    "QuoteStartedByAgentGroupName": "Sam's Insurance",
+    "QuoteStartedBySalesPersonName": "Sam Thatcher",
+    "ReleaseDate": "2026-04-23T12:12:54+00:00",
+    "RemainingPremium": 0,
+    "RENEWAL_COUNT": 0,
+    "RenewalBlocked": false,
+    "RootQuoteRef": "DQ7FSM",
+    "SaleCompletedByAgentGroupName": "Sam's Insurance",
+    "SaleCompletedBySalesPersonEmail": "sam.thatcher@instanda.com",
+    "SaleCompletedBySalesPersonName": "Sam Thatcher",
+    "SaleDate": "2026-04-30T11:09:18+00:00",
+    "SalespersonEmail": "sam.thatcher@instanda.com",
+    "SalespersonName": "Sam Thatcher",
+    "SalespersonPhone": "",
+    "SalespersonReferralLevel": 10,
+    "SalespersonRefId": "SAM001",
+    "SaleStage": "SaleComplete",
+    "SiteEnvironment": "Live",
+    "State_Choice": "Alabama",
+    "Test_MI_Count": 0,
+    "UnconfirmedRenewalChanges": false,
+    "WasDeclined": false,
+    "WasReferred": false,
+    "INSVAR_IsSuperseded": false,
+    "INSVAR_IsSupersededByOOS": false,
+    "InstalmentTotal": 0,
+    "INSVAR_IsDisclosure": false,
+    "Document links": {
+      "QuoteRef": "DQ7FSM",
+      "QuoteDate": "2026-04-29T23:00:00",
+      "Payment Schedule": "testsite.test.instanda.com/Public/DownloadStoredPdfBuilder?packageId=21703&pdfBuilderId=313594&quoteRef=97afc575-2e46-46e4-b2e2-215340a204a6"
+    },
+    "INSVAR_Assigned_SalespersonEmail": "sam.thatcher@instanda.com",
+    "INSVAR_Assigned_SalespersonName": "Sam Thatcher",
+    "INSVAR_Assigned_SalespersonPhone": "",
+    "INSVAR_Assigned_SalespersonReferralLevel": "10",
+    "INSVAR_Assigned_SalespersonRefId": "SAM001",
+    "INSVAR_Assigned_AgentGroupAddress1": "Test avenue",
+    "INSVAR_Assigned_AgentGroupAddress2": "1 Close avenue",
+    "INSVAR_Assigned_AgentGroupCountry": "",
+    "INSVAR_Assigned_AgentGroupCounty": "",
+    "INSVAR_Assigned_AgentGroupEmail": "testers@f2xgroup.co.uk",
+    "INSVAR_Assigned_AgentGroupName": "Sam's Insurance",
+    "INSVAR_Assigned_AgentGroupPostcode": "CB2 9NE",
+    "INSVAR_Assigned_AgentGroupRefID": "",
+    "INSVAR_Assigned_AgentGroupTown": "CAMBRIDGE"
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

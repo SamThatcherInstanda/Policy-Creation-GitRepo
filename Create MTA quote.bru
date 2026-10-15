@@ -1,0 +1,59 @@
+meta {
+  name: Create MTA quote
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://api-{{environment}}.instanda-eu.com/Live/v0.1/Package{{packageId}}/RateAdjustment?siteDomainName={{siteDomain}}&policyNumber={{policyNumber}}&salesPersonUserName={{salesPersonUserName}}
+  body: json
+  auth: basic
+}
+
+params:query {
+  siteDomainName: {{siteDomain}}
+  policyNumber: {{policyNumber}}
+  salesPersonUserName: {{salesPersonUserName}}
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: test
+  password: test
+}
+
+body:json {
+  {
+    "EffectiveChangeDate": "2026-07-24",
+    "QuickQuoteNum": 2,
+    "QuickQuoteNumTwo": 2,
+    "State_Choice": "Iowa",
+    "Insuree_Bank_Details_Sort_Code": "200000",
+    "Insuree_Bank_Details_Account_Number": "55779911",
+    "Insuree_Bank_Details_Account_Name": "t",
+    "Insuree_General_Liability_Limit": "£2,000,000",
+    "Insuree_General_Liability_Deductible": "£25,000",
+    "Policy_Start_Date": "2026-04-23",
+    "Insuree_Title": "Mr",
+    "Insuree_First_Name": "Rate",
+    "Insuree_Last_Name": "Adjustment",
+    "Insuree_Address_Line_1": "t",
+    "Insuree_Address_Line_2": "string",
+    "Insuree_City": "t",
+    "Insuree_County": "string",
+    "Insuree_State": "string",
+    "Insuree_Postcode": "CV455TR",
+    "Insuree_Country": "GB",
+    "Insuree_Primary_Email": "sam.thatcher@instanda.com",
+    "Insuree_Entity_Type_Choice": "Individual"
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

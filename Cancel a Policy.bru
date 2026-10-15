@@ -1,0 +1,42 @@
+meta {
+  name: Cancel a Policy
+  type: http
+  seq: 7
+}
+
+put {
+  url: https://api-{{environment}}.instanda-eu.com/Live/v0.1/Package{{packageId}}/CancelPolicy?siteDomainName={{siteDomain}}&policyNumber={{policyNumber}}&salesPersonUserName={{salesPersonUserName}}
+  body: json
+  auth: basic
+}
+
+params:query {
+  siteDomainName: {{siteDomain}}
+  policyNumber: {{policyNumber}}
+  salesPersonUserName: {{salesPersonUserName}}
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: test
+  password: test
+}
+
+body:json {
+  {
+    "Cancellation_Number": 45,
+    "CancellationDate": "2026-04-24",
+    "CancellationSOAPNumOne": 5,
+    "CancellationSOAPNumTwo": 5,
+    "CancellationReason": "test"
+  }
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}

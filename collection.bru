@@ -1,0 +1,25 @@
+docs {
+  This collection is intended to be used for quick policy creation using the Package API & Function App, filled with dummy test data. It reduces time spent creating policies on the web & allows us to get testing done quicker.
+  
+  At present there are two collection environments - Test & Regression, which can be switched between depending on the testing you are doing. 
+  
+  Run the collection by hovering over the collection name, clicking the three dots & then clicking 'Run'. Select what transaction types you want to create & the amount of policies by specifying the amount of iterations to run through.
+  
+  Variables are set an environment level so the requests themselves do not need to be altered, aside from StartRenewal. 
+  
+  So far I've not been able to add a year onto the PolicyStartDate using Javascript as I have done for all the other variables; meaning that in StartRenewal the StartDate will have to be set manually in the request parameters. 
+  
+  Also, in the 'Create MTA Quote' request body, you will need to set the EffectiveChangeData manually. Working on getting this automated as well.
+  
+  When the Generate Dummy Data request is sent, the response is captured as a JSON object & used in subsequent requests. The PolicyNumber increments per request & the Start/End date variables can be edited after generating the data should you wish to test auto renewals for example.
+  
+  The 'Create NB' request does not run calculations as it uses the CreateQuoteOrPolicyData method from the package API. So referrals/declines will not be triggered.
+  
+  Both the MTA & Renewal requests may return a 400, this is an issue with the Package API. In most cases either an MTA or Renewal quote will be started, just check either the Web or DB for the PolicyNumber to verify.
+  
+  You are welcome to fork this collection to your own machine & play around. This can be used on Postman but the JavaScript variables used to make the collection work are Bruno referenced, so there may be some additional config required for Postman
+  
+  
+  
+  
+}

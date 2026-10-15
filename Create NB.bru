@@ -1,0 +1,79 @@
+meta {
+  name: Create NB
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://api-{{environment}}.instanda-eu.com/Live/v0.1/Package{{packageId}}/CreateQuoteOrPolicyData?siteDomainName={{siteDomain}}&policyNumber={{policyNumber}}&salesPersonUserName={{salesPersonUserName}}
+  body: json
+  auth: basic
+}
+
+params:query {
+  siteDomainName: {{siteDomain}}
+  policyNumber: {{policyNumber}}
+  salesPersonUserName: {{salesPersonUserName}}
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: test
+  password: test
+}
+
+body:json {
+  {{requestBBody}}
+  
+}
+
+script:pre-request {
+  // --- Load fullResponse safely ---
+  let raw = bru.getVar("fullResponse")
+  
+  
+  if (!raw || raw.trim() === "") {
+    throw new Error("fullResponse is empty. Run Request A again.")
+  }
+  
+  let full
+  try {
+    full = JSON.parse(raw)
+  } catch (e) {
+    throw new Error("fullResponse is not valid JSON. Check environment variable.")
+  }
+  
+  // --- Load dates ---
+  let start = bru.getEnvVar("policyStartDate")
+  let end = bru.getEnvVar("policyEndDate")
+  let cont = bru.getEnvVar("contChoice")
+  
+  
+  if (!start || !end) {
+    throw new Error("Start or end date is missing. Check environment variables.")
+  }
+  
+  // --- Override dates ---
+  full.Policy_Start_Date = start
+  full.Policy_End_Date = end
+  full.Cont_Choice = cont
+  
+  bru.setEnvVar("requestBBody", JSON.stringify(full))
+  
+  // --- Increment policy number
+  const policy = bru.getEnvVar("policyNumber");
+  const prefix = policy.slice(0, 4);
+  const number = parseInt(policy.slice(4), 10);
+  const next = String(number + 1).padStart(6, "0");
+  bru.setEnvVar("policyNumber", prefix + next);
+  
+}
+
+settings {
+  encodeUrl: false
+  timeout: 0
+}
