@@ -1,0 +1,187 @@
+{
+  "info": {
+    "type": "bruno-environment",
+    "exportedAt": "2026-10-15T10:55:23.726Z",
+    "exportedUsing": "Bruno/v4.2.1"
+  },
+  "environments": [
+    {
+      "name": "Regression",
+      "variables": [
+        {
+          "name": "environment",
+          "value": "regression",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "stack",
+          "value": "europe",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "packageId",
+          "value": "21703",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "functionAppCode",
+          "value": "u4XqkKBPHvvuJ53QZTOdr7EQzULpV3MXnI9SDycG8XKGAzFuaE0i6A==",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "siteDomain",
+          "value": "testsite.regression.instanda.com",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyNumber",
+          "value": "LIVE000090",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "salesPersonUserName",
+          "value": "SG",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "fullResponse",
+          "value": "",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyStartDate",
+          "value": "09/09/2025",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyEndDate",
+          "value": "08/09/2026",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "requestBBody",
+          "value": "{\"Car_MI_Test\":[{\"Number_Test\":1485.11,\"test_text_MI\":\"Pizza\",\"yes_no_test\":\"No\"}],\"Insuree_Address_Line_1\":\"3931 Davonte Valleys\",\"Insuree_Address_Line_2\":\"\",\"Insuree_Billing_Plan\":\"Weekly\",\"Insuree_City\":\"East Lorena\",\"Insuree_Country\":\"GB\",\"Insuree_Entity_Type_Choice\":\"Corporation\",\"Insuree_First_Name\":\"Mylene\",\"Insuree_General_Liability_Deductible\":\"£100,000\",\"Insuree_General_Liability_Limit\":\"£5,000,000\",\"Insuree_Last_Name\":\"Dicki\",\"Insuree_Postcode\":\"GY3 9AG\",\"Insuree_Primary_Email\":\"Mylene_Dicki@instanda.com\",\"Insuree_Title\":\"Ms\",\"OriginalPolicyStartDate\":\"06/09/2026\",\"PaymentType\":\"Offline\",\"Policy_End_Date\":\"08/09/2026\",\"Policy_Start_Date\":\"09/09/2025\",\"PolicyNumber\":\"TEST295820\",\"PolicyOriginalSaleDate\":\"06/09/2026\",\"PremiumNet\":\"3566.08\",\"QuickQuoteNum\":19761,\"QuoteDate\":\"05/09/2026\",\"QuoteRef\":\"7T9SKK\",\"SaleDate\":\"2026-09-03T08:27:55.3096009Z\",\"SaleStage\":\"SaleComplete\",\"SelectedCoverType\":\"\",\"State_Choice\":\"Nebraska\",\"Cont_Choice\":\"Asia\"}",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "contChoice",
+          "value": "Asia",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "stateChoice",
+          "value": "Washington",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        }
+      ]
+    },
+    {
+      "name": "Test",
+      "variables": [
+        {
+          "name": "environment",
+          "value": "test",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "stack",
+          "value": "europe",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "packageId",
+          "value": "21703",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "functionAppCode",
+          "value": "u4XqkKBPHvvuJ53QZTOdr7EQzULpV3MXnI9SDycG8XKGAzFuaE0i6A==",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "siteDomain",
+          "value": "testsite.test.instanda.com",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyNumber",
+          "value": "LIVE000022",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "salesPersonUserName",
+          "value": "SamTest",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyStartDate",
+          "value": "10/06/2026",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "policyEndDate",
+          "value": "09/06/2027",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "stateChoice",
+          "value": "California",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        },
+        {
+          "name": "requestBBody",
+          "value": "{\"Car_MI_Test\":[{\"Number_Test\":2920.36,\"test_text_MI\":\"Shoes\",\"yes_no_test\":\"No\"}],\"Insuree_Address_Line_1\":\"456 Nikolaus Greens\",\"Insuree_Address_Line_2\":\"\",\"Insuree_Billing_Plan\":\"Weekly\",\"Insuree_City\":\"Haskellport\",\"Insuree_Country\":\"GB\",\"Insuree_Entity_Type_Choice\":\"Corporation\",\"Insuree_First_Name\":\"Cassandre\",\"Insuree_General_Liability_Deductible\":\"£5,000\",\"Insuree_General_Liability_Limit\":\"£2,000,000\",\"Insuree_Last_Name\":\"Lueilwitz\",\"Insuree_Postcode\":\"MF8 2LG\",\"Insuree_Primary_Email\":\"Cassandre11@instanda.com\",\"Insuree_Title\":\"Mrs\",\"OriginalPolicyStartDate\":\"28/04/2026\",\"PaymentType\":\"Offline\",\"Policy_End_Date\":\"02/12/2026\",\"Policy_Start_Date\":\"21/04/2026\",\"PolicyNumber\":\"TEST874340\",\"PolicyOriginalSaleDate\":\"28/04/2026\",\"PremiumNet\":\"3003.41\",\"QuickQuoteNum\":930344.51,\"QuoteDate\":\"27/04/2026\",\"QuoteRef\":\"5TA42N\",\"SaleDate\":\"2026-04-21T14:17:32.7770062Z\",\"SaleStage\":\"SaleComplete\",\"SelectedCoverType\":\"\",\"State_Choice\":\"Washington\"}",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        }
+      ]
+    }
+  ]
+}
